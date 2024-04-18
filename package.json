@@ -1,0 +1,11 @@
+{
+  "author": "",
+  "license": "ISC",
+  "main": "app.mjs",
+  "dependencies": {
+    "express": "^4.19.2",
+    "body-parser": "^1.20.2",
+    "express-session": "^1.18.0",
+    "sqlite-async": "^1.2.0"
+  }
+}

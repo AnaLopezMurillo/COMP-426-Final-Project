@@ -1,49 +1,42 @@
 <html>
+  <head>
+    <script>
+      function getWeather(data) {
 
-<head>
+        const js_city = document.getElementById("htmlcity");
+        const js_weather = document.getElementById("htmlweather");
+        const js_wind = document.getElementById("htmlwind");
+        const js_temp = document.getElementById("htmltemp");
 
-<script>
+        js_city.innerHTML = data.name;
+        js_weather.innerHTML = data.weather[0].description;
+        js_wind.innerHTML = data.wind.speed;
+        js_temp.innerHTML = data.main.temp;
 
-function getWeather(data) {
+      }
 
-const js_city = document.getElementById("htmlcity");
-const js_weather = document.getElementById("htmlweather");
-const js_wind = document.getElementById("htmlwind");
-const js_temp = document.getElementById("htmltemp");
+      document.addEventListener("click", function (event) {
 
-js_city.innerHTML = data.name;
-js_weather.innerHTML = data.weather[0].description;
-js_wind.innerHTML = data.wind.speed;
-js_temp.innerHTML = data.main.temp;
+        if (!event.target.matches("#button")) return;
 
-}
-
-document.addEventListener("click", function (event) {
-
-	if (!event.target.matches("#button")) return;
-
-fetch('http://api.openweathermap.org/data/2.5/weather?q='+ document.getElementById('testcity').value +',us&APPID=f87efa6efbae21838d158e6b02208445&units=imperial')
-.then(response =>{
-    return response.json();
-}).then(data =>{
-    getWeather(data);
-    console.log(data);
-   })
-});
-
-</script>
-
-</head>
-
-<body>
-
-What US city would you like to get the weather for? <input type="text" value="Chicago" id=testcity> &nbsp <button id="button" type='button'>Get Weather</button>
-<br><br>
-<table>
-  <tr><td align=right><b>City:</b></td><td><p id="htmlcity"></p></td></tr>
-  <tr><td align=right><b>Weather:</b></td><td><p id="htmlweather"></p></td></tr>
-  <tr><td align=right><b>Wind Speed:</b></td><td><p id="htmlwind"></p></td></tr>
-  <tr><td align=right><b>Temperature(F):</b></td><td><p id="htmltemp"></p></td></tr>
-</table>
-</body>
+      fetch('http://api.openweathermap.org/data/2.5/weather?q='+ document.getElementById('testcity').value +',us&APPID=f87efa6efbae21838d158e6b02208445&units=imperial')
+      .then(response =>{
+          return response.json();
+      }).then(data =>{
+          getWeather(data);
+          console.log(data);
+        })
+      });
+    </script>
+  </head>
+  <body>
+    What US city would you like to get the weather for? <input type="text" value="Chicago" id=testcity> &nbsp <button id="button" type='button'>Get Weather</button>
+    <br><br>
+    <table>
+      <tr><td align=right><b>City:</b></td><td><p id="htmlcity"></p></td></tr>
+      <tr><td align=right><b>Weather:</b></td><td><p id="htmlweather"></p></td></tr>
+      <tr><td align=right><b>Wind Speed:</b></td><td><p id="htmlwind"></p></td></tr>
+      <tr><td align=right><b>Temperature(F):</b></td><td><p id="htmltemp"></p></td></tr>
+    </table>
+  </body>
 </html>

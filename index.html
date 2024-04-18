@@ -3,9 +3,49 @@
     <head>
         <meta charset="UTF-8">
     <title>COMP 426 Final Project</title>
-    <script defer src="./app.mjs"></script>
+    <!-- <script defer type="module" src="./app.mjs"></script> -->
+    <script defer src="./index.mjs"></script>
     </head>
     <body>
-        hello world
+        <h1>Weather</h1>
+        What US city would you like to get the weather for? <input type="text" value="Chicago" id=testcity> &nbsp 
+        <button id="button" type='button'>
+            Get Weather
+        </button>
+        <br><br>
+        <table>
+        <tr>
+            <td align=right>
+                <b>City:</b>
+            </td>
+            <td>
+                <p id="htmlcity"></p>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>
+                <b>Weather:</b>
+            </td>
+            <td>
+                <p id="htmlweather"></p>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>
+                <b>Wind Speed:</b>
+            </td>
+            <td>
+                <p id="htmlwind"></p>
+            </td>
+        </tr>
+        <tr>
+            <td align=right>
+                <b>Temperature(F):</b>
+            </td>
+            <td>
+                <p id="htmltemp"></p>
+            </td>
+        </tr>
+    </table>
     </body>
 </html>
