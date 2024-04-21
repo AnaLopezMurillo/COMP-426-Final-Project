@@ -11,7 +11,11 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.send("login goes here");
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    const _retfile = path.join(__dirname, 'login.html');
+
+    res.sendFile(_retfile);
 });
 
 app.get('/weather', (req, res) => {
