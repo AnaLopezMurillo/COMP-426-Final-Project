@@ -7,6 +7,11 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-// app.get('/', (req, res)) => {
+app.get('/login', (req, res) => {
+    // login html page will be rendered here
+    console.log('test');
+});
 
-// }
+app.listen(port, () => {
+    console.log('Running on: http://localhost:3000');
+})
