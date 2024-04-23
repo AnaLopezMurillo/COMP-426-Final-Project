@@ -9,7 +9,6 @@ h1 {
 
 .center {
     float:left;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -42,10 +41,9 @@ h1 {
     margin-right:20vw;
 }
 
-.login-card #content h2 {
-    font-family: 'Fira Sans';
+#content h2 {
     letter-spacing: 4px;
-    font-size: 35px;
+    font-size: 37px;
     background-color: #51A1A7;
     color: transparent;
     text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
@@ -56,6 +54,32 @@ h1 {
 
 .login-content {
     padding-top: 20px;
+}
+
+.login-content input {
+    font-family: 'Fira Sans';
+    font-size: 30px;
+    color: #51A1A7;
+    text-align: center;
+    letter-spacing: 4px;
+    border-radius: 20px;
+    border-color:rgba(225, 247, 248, 0.465);
+    width: 300px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+button {
+    font-family: 'Fira Sans';
+    color: #4E9A9F;
+    font-size: 27px;
+    font-style: oblique;
+    letter-spacing: 2px;
+    background-color: #FFF373;
+    border-radius: 10px;
+    border-color:rgba(238, 254, 255, 0.465);
+    width: 150px;
+    height: 80px;
 }
 
 .login-sun {
