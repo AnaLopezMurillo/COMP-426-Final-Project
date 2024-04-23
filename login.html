@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
     <title>COMP 426 Final Project Login</title>
     <link rel="stylesheet" href="./style.css">
+    <script defer src="./login.mjs"></script>
     </head>
     <body>
         <div class="center">
@@ -14,12 +15,18 @@
                         <h2>
                             Please Enter your PID:
                         </h2>
-                        <input id="PID" >
-                        <a href="http://localhost:3000/weather">
-                            <button>
-                                LOGIN
-                            </button>
-                        </a>
+                        <div class="login-form">
+                            <form id="PIDForm" action="http://localhost:3000" method="GET">
+                                <input 
+                                    name="PID"
+                                    type="text"
+                                    id="PID"
+                                >
+                                <button type="submit">
+                                    Login
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

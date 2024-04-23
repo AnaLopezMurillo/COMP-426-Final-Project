@@ -13,20 +13,20 @@ function getWeather(data) {
 }
 
 document.addEventListener("click", function (event) {
-    if (!event.target.matches("#button")) return;
+  if (!event.target.matches("#button")) return;
 
-    fetch('http://api.openweathermap.org/data/2.5/weather?q='
-    + document.getElementById('testcity').value +
-    ',us&APPID=f87efa6efbae21838d158e6b02208445&units=imperial')
-    .then(
-        response =>{
-      return response.json();
-    })
-    .then(
-        data =>{
-        getWeather(data);
-        console.log(data);
-        })
+  fetch('http://api.openweathermap.org/data/2.5/weather?q='
+  + document.getElementById('testcity').value +
+  ',us&APPID=f87efa6efbae21838d158e6b02208445&units=imperial')
+  .then(
+      response =>{
+    return response.json();
+  })
+  .then(
+      data =>{
+      getWeather(data);
+      console.log(data);
+      })
   }
 
   // to store this into the backend we'll probably need to use fetch as well with localhost:3000 as the path w/ the information in it

@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@font-face { font-family: 'Fira Sans'; 
+    src: url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); } 
+
 h1 {
     color:blue;
 }
 
-@font-face { font-family: 'Fira Sans'; 
-    src: url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); } 
+body {
+    background-image: url('./icons/1349543.png');
+}
 
 .center {
     float:left;
@@ -18,7 +22,8 @@ h1 {
 }
 
 .login-card {
-    margin-left: 20vw;
+    margin-left: 25vw;
+    margin-top: 10vh;
     position: relative;
     z-index: 1;
     border-radius: 115px;
@@ -69,7 +74,20 @@ h1 {
     margin-right: 10px;
 }
 
-button {
+.login-button input {
+    font-family: 'Fira Sans';
+    color: #4E9A9F;
+    font-size: 27px;
+    font-style: oblique;
+    letter-spacing: 2px;
+    background-color: #FFF373;
+    border-radius: 10px;
+    border-color:rgba(238, 254, 255, 0.465);
+    width: 150px;
+    height: 80px;
+}
+
+form button {
     font-family: 'Fira Sans';
     color: #4E9A9F;
     font-size: 27px;
@@ -88,4 +106,13 @@ button {
    top: -7vw;
    right: -12vh;
    position: absolute; 
+}
+
+form {
+    display:flex;
+    align-items: center;
+}
+
+.login-form {
+    margin-left: 5vw;
 }
