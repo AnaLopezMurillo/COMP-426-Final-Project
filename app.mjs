@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     res.sendFile(_retfile);
 });
 
-app.get('/?PID=', (req, res) => {
+app.get('/weather', (req, res) => {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
     const _retfile = path.join(__dirname, 'weather.html');
