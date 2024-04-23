@@ -1,0 +1,18 @@
+h1 {
+    color:blue;
+}
+
+.center {
+    float:left;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 90vw;
+    min-height: 90vh;
+    align-content: space-around;
+}
+
+.login-card {
+    background-color: #ade1ed;
+}
