@@ -12,6 +12,27 @@ function getWeather(data) {
         js_temp.innerHTML = data.main.temp;
 }
 
+let cityForm = document.getElementById("city-form")
+
+cityForm.addEventListener("submit", (e) => {
+  console.log(document.getElementById('testcity').value)
+
+  fetch('http://api.openweathermap.org/data/2.5/weather?q='
+  + document.getElementById('testcity').value +
+  ',us&APPID=f87efa6efbae21838d158e6b02208445&units=imperial')
+  .then(
+      response =>{
+    return response.json();
+  })
+  .then(
+      data =>{
+      getWeather(data);
+      console.log(data);
+      })
+
+  e.preventDefault();
+});
+
 document.addEventListener("click", function (event) {
   if (!event.target.matches("#button")) return;
 
