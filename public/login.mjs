@@ -20,7 +20,8 @@ loginForm.addEventListener("submit", (e) => {
   // post the PID to the backend here
 
   e.preventDefault();
-  // this is a placeholder, we want to actually change this based on the PID. 
+  // this is a placeholder, we want to actually change this based on the PID.
+  // localhost:3000/PID or something like that
   window.location.href = 'http://localhost:3000/weather';
 
 })
