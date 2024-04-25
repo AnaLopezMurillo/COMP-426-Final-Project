@@ -17,10 +17,10 @@ loginForm.addEventListener("submit", (e) => {
     return;
   }
 
-  console.log(PIDString.length);
+  // post the PID to the backend here
 
-  console.log(PID);
   e.preventDefault();
+  // this is a placeholder, we want to actually change this based on the PID. 
   window.location.href = 'http://localhost:3000/weather';
 
 })
