@@ -39,7 +39,7 @@ app.get('/user', async (req, res) => {
       if (cities.length > 0) {
         res.status(200).json(cities);
       } else {
-        res.status(404).send({ error: 'No cities found for this PID' });
+        res.status(200).json([]);
       }
     } else {
       // Fetch all users and their cities
