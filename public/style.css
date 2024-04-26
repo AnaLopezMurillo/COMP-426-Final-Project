@@ -21,7 +21,11 @@ body {
     align-content: space-around;
 }
 
-.login-card {
+.weather-page {
+    margin-left: 8vw;
+}
+
+.card-bg {
     margin-left: 25vw;
     margin-top: 10vh;
     position: relative;
@@ -34,7 +38,17 @@ body {
     height: 300px;
 }
 
-.login-card #content {
+.weather {
+    position:relative;
+    float:left;
+    margin-top: 0vh;
+    margin-right: 3vw;
+    margin-left: 0vw;
+    width: 700px;
+    height: 500px;
+}
+
+.card-bg #content {
     font-family: 'Fira Sans';
     position: relative;
     z-index:3;
@@ -44,9 +58,43 @@ body {
     height: 310px;
     top: -1vh;
     margin-right:20vw;
+    box-shadow: 0px 3px 4px 0px rgba(79, 79, 79, 0.465);
 }
 
-#content h2 {
+.card-bg .weather-content {
+    float:left;
+    font-family: 'Fira Sans';
+    position: relative;
+    z-index:3;
+    background-color: #C2F2F5;
+    border-radius: 115px;
+    width: 700px;
+    height: 500px;
+    top: -1vh;
+    margin-right:20vw;
+    box-shadow: 0px 3px 4px 0px rgba(79, 79, 79, 0.465);
+}
+
+.stored-hub {
+    width: 400px;
+    height: 500px;
+}
+
+.card-bg .stored-hub {
+    float:left;
+    font-family: 'Fira Sans';
+    position: relative;
+    z-index:3;
+    background-color: #C2F2F5;
+    border-radius: 115px;
+    width: 400px;
+    height: 500px;
+    top: -1vh;
+    box-shadow: 0px 3px 4px 0px rgba(79, 79, 79, 0.465);
+}
+
+h2 {
+    font-family: 'Fira Sans';
     letter-spacing: 4px;
     font-size: 37px;
     background-color: #51A1A7;
@@ -55,6 +103,36 @@ body {
     -webkit-background-clip: text;
         -moz-background-clip: text;
             background-clip: text; 
+}
+
+.weather-page h2 {
+    font-family: 'Fira Sans';
+    letter-spacing: 4px;
+    font-size: 37px;
+    background-color: #f8ffff;
+    color: transparent;
+    text-shadow: 2px 2px 3px rgba(43, 106, 152, 0.5);
+    -webkit-background-clip: text;
+        -moz-background-clip: text;
+            background-clip: text;
+    margin-left: 0px;
+}
+
+h3 {
+    font-family: 'Fira Sans';
+    font-weight: 400;
+    letter-spacing: 4px;
+    font-size: 25px;
+    color: #51A1A7;
+}
+
+.searched-div {
+    padding-top: 1vw;
+}
+
+#searched-cities {
+    padding-left: 3vw;
+    text-align: left;
 }
 
 .login-content {
@@ -108,6 +186,14 @@ form button {
    position: absolute; 
 }
 
+.weather-sun {
+    position: absolute;
+    z-index: 2;
+    width: 40%;
+    top: -7vw;
+    left: -12vh;
+}
+
 form {
     display:flex;
     align-items: center;
@@ -115,4 +201,85 @@ form {
 
 .login-form {
     margin-left: 5vw;
+}
+
+.city-form {
+    padding-top: 20px;
+    margin-left: 11vh;
+    margin-bottom: 1vw;
+}
+
+.city-form input{
+    font-family: 'Fira Sans';
+    font-size: 30px;
+    color: #51A1A7;
+    text-align: center;
+    letter-spacing: 4px;
+    border-radius: 20px;
+    border-color:rgba(225, 247, 248, 0.465);
+    width: 300px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.city-form form button {
+    font-size: 25px;
+    width: 150px;
+    height: 60px;
+}
+
+.attributes {
+    float:left;
+    align-items: center;
+    width: 300px;
+    height: 500px;
+    margin-left: 4vw;
+}
+
+.attribute {
+    font-family: 'Fira Sans';
+    font-size: 30px;
+    background-color: #F0FDFE;
+    color: #51A1A7;
+    text-align: center;
+    letter-spacing: 4px;
+    border-radius: 20px;
+    border-color:rgba(225, 247, 248, 0.465);
+    width: 320px;
+    height: 60px;
+    margin-right: 10vw;
+    margin-top: 3vh;
+    float:left;
+    padding: 0;
+}
+
+.attribute p {
+    margin-top: 10px;
+}
+
+.results {
+    float:left;
+    align-items: center;
+    width: 300px;
+    height: 500px;
+}
+
+.result {
+    font-size: 30px;
+    background-color: #85C2C5;
+    color: #F0FDFE;
+    text-align: center;
+    letter-spacing: 4px;
+    border-radius: 20px;
+    border-color:rgba(225, 247, 248, 0.465);
+    width: 250px;
+    height: 60px;
+    margin-right: 10vw;
+    margin-top: 3vh;
+    margin-left: 3vw;
+    float:left;
+}
+
+.result p {
+    margin-top: 10px;
 }
