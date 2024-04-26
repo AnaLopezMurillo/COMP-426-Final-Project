@@ -186,6 +186,14 @@ form button {
    position: absolute; 
 }
 
+.weather-sun {
+    position: absolute;
+    z-index: 2;
+    width: 40%;
+    top: -7vw;
+    left: -12vh;
+}
+
 form {
     display:flex;
     align-items: center;
