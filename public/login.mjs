@@ -17,9 +17,14 @@ loginForm.addEventListener("submit", async (e) => {
     return;
   }
 
+  //post if database does not have PID already
+  //dont need to do anything if PID already exists
   try {
     await fetch("http://localhost:3000/user", {
           method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
           body: JSON.stringify({
             pid: PID
           })

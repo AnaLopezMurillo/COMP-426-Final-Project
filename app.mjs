@@ -66,7 +66,13 @@ app.post('/user', async (req, res) => {
   if (typeof pid !== 'number') {
     return res.status(400).send('PID must be an number.');
   }
+
   try {
+    const user = await db.get('SELECT pid FROM user WHERE pid = ?', pid);
+    if (user) {
+      return res.status(201).send({message: 'User exists'});
+    };
+
     await db.run(`INSERT INTO user (pid) VALUES (?)`, pid);
     res.status(201).send({ message: 'User created successfully' });
   } catch (error) {
