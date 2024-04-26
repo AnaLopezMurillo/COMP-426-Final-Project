@@ -29,11 +29,41 @@ fetch('http://api.openweathermap.org/data/2.5/weather?q='
     data =>{
     getWeather(data);
     console.log(data);
+
+    addrecentCities(window.location.href.slice(-34)); // helper function to add recently searched cities to div. Call it before posting the current added city so that it doesn't include that one.
+
+    fetch("http://localhost:3000/user/city", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: data.name,
+          weather: data.weather[0].description,
+          windspeed: data.wind.speed,
+          temp: data.main.temp,
+          pid: window.location.href.slice(-34)
+        })
+      });
+
     })
 
 e.preventDefault();
 });
 
+
+async function addrecentCities(p_id) {
+    const response = await fetch ("http://localhost:3000/user?pid=${p_id}");
+    const recent_cities = await response.json();
+
+    recent_cities.cities.forEach(c => {
+      const new_div = document.createElement("h3");
+      new_div.textContent = c.name;
+      searchedCities.appendChild(new_div);
+    });
+};
+
+/*
 document.addEventListener("click", function (event) {
   if (!event.target.matches("#button")) return;
 
@@ -48,20 +78,7 @@ document.addEventListener("click", function (event) {
       data =>{
       getWeather(data);
       console.log(data);
-
-      fetch("http://localhost:3000/user/city", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: data.name,
-          weather: data.weather[0].description,
-          windspeed: data.wind.speed,
-          temp: data.main.temp,
-          pid: window.location.href.slice(-34)
-        })
     });
-      });
   }
 );
+*/
