@@ -1,5 +1,3 @@
-// will contain functionality for index.html
-
 function getWeather(data) {
     const js_city = document.getElementById("htmlcity");
         const js_weather = document.getElementById("htmlweather");
@@ -13,6 +11,9 @@ function getWeather(data) {
 }
 
 let cityForm = document.getElementById("city-form")
+
+// this is the div we should manipulate to add the recently searched cities from the database!!! just add in the innerHTML a new <h3> element with each city from the backend, and they should show up on the webpage
+let searchedCities = document.getElementById("searched-cities")
 
 cityForm.addEventListener("submit", (e) => {
   console.log(document.getElementById('testcity').value)

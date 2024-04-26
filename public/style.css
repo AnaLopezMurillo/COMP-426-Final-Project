@@ -21,6 +21,10 @@ body {
     align-content: space-around;
 }
 
+.weather-page {
+    margin-left: 8vw;
+}
+
 .card-bg {
     margin-left: 25vw;
     margin-top: 10vh;
@@ -35,7 +39,11 @@ body {
 }
 
 .weather {
+    position:relative;
+    float:left;
     margin-top: 0vh;
+    margin-right: 3vw;
+    margin-left: 0vw;
     width: 700px;
     height: 500px;
 }
@@ -53,7 +61,8 @@ body {
     box-shadow: 0px 3px 4px 0px rgba(79, 79, 79, 0.465);
 }
 
-.card-bg #weather-content {
+.card-bg .weather-content {
+    float:left;
     font-family: 'Fira Sans';
     position: relative;
     z-index:3;
@@ -66,7 +75,26 @@ body {
     box-shadow: 0px 3px 4px 0px rgba(79, 79, 79, 0.465);
 }
 
+.stored-hub {
+    width: 400px;
+    height: 500px;
+}
+
+.card-bg .stored-hub {
+    float:left;
+    font-family: 'Fira Sans';
+    position: relative;
+    z-index:3;
+    background-color: #C2F2F5;
+    border-radius: 115px;
+    width: 400px;
+    height: 500px;
+    top: -1vh;
+    box-shadow: 0px 3px 4px 0px rgba(79, 79, 79, 0.465);
+}
+
 h2 {
+    font-family: 'Fira Sans';
     letter-spacing: 4px;
     font-size: 37px;
     background-color: #51A1A7;
@@ -75,6 +103,36 @@ h2 {
     -webkit-background-clip: text;
         -moz-background-clip: text;
             background-clip: text; 
+}
+
+.weather-page h2 {
+    font-family: 'Fira Sans';
+    letter-spacing: 4px;
+    font-size: 37px;
+    background-color: #f8ffff;
+    color: transparent;
+    text-shadow: 2px 2px 3px rgba(43, 106, 152, 0.5);
+    -webkit-background-clip: text;
+        -moz-background-clip: text;
+            background-clip: text;
+    margin-left: 0px;
+}
+
+h3 {
+    font-family: 'Fira Sans';
+    font-weight: 400;
+    letter-spacing: 4px;
+    font-size: 25px;
+    color: #51A1A7;
+}
+
+.searched-div {
+    padding-top: 1vw;
+}
+
+#searched-cities {
+    padding-left: 3vw;
+    text-align: left;
 }
 
 .login-content {

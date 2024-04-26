@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <div class="center">
+        <div class="center weather-page">
             <h2>Please enter a U.S. City</h2>
             <div class="card-bg weather">
-                <div id="weather-content">
+                <div class="weather-content">
                     <div class="city-form">
                         <form id="city-form">
                             <input name="City" type="text" id="testcity">
@@ -34,19 +34,28 @@
                     </div>
                     <div class="results">
                         <div class="result">
-                            <p id="htmlcity">aaa</p>
+                            <p id="htmlcity"></p>
                         </div>
                         <div class="result">
-                            <p id="htmlweather">aaa</p>
+                            <p id="htmlweather"></p>
                         </div>
                         <div class="result">
-                            <p id="htmlwind">aaa</p>
+                            <p id="htmlwind"></p>
                         </div>
                         <div class="result">
-                            <p id="htmltemp">aaa</p>
+                            <p id="htmltemp"></p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="card-bg weather stored-hub">
+                <div class="weather-content stored-hub">
+                    <div class="searched-div">
+                        <h3>Recently searched:</h3>
+                        <div id="searched-cities"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </body>
