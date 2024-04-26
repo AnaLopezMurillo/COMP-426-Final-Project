@@ -26,8 +26,18 @@ document.addEventListener("click", function (event) {
       data =>{
       getWeather(data);
       console.log(data);
-      })
+      });
+  
+      fetch("http://localhost:3000/user/city", {
+        method: "POST",
+        body: JSON.stringify({
+          name: data.city,
+          weather: data.weather,
+          windspeed: data.windspeed,
+          temp: data.temperature,
+          pid: window.location.slice(-34)  // fix this - should be getting the PID from the current url 
+        })
+    });
   }
 
-  // to store this into the backend we'll probably need to use fetch as well with localhost:3000 as the path w/ the information in it
 );
