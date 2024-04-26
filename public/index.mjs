@@ -26,18 +26,21 @@ document.addEventListener("click", function (event) {
       data =>{
       getWeather(data);
       console.log(data);
-      });
-  
+
       fetch("http://localhost:3000/user/city", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({
-          name: data.city,
-          weather: data.weather,
-          windspeed: data.windspeed,
-          temp: data.temperature,
-          pid: window.location.slice(-34)  // fix this - should be getting the PID from the current url 
+          name: data.name,
+          weather: data.weather[0].description,
+          windspeed: data.wind.speed,
+          temp: data.main.temp,
+          pid: window.location.href.slice(-34)
         })
     });
+      });
   }
 
 );

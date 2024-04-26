@@ -1,6 +1,6 @@
 let loginForm = document.getElementById("PIDForm");
 
-loginForm.addEventListener("submit", (e) => {
+loginForm.addEventListener("submit", async (e) => {
   let PID = Number(document.getElementById("PID").value);
   let PIDString = document.getElementById("PID").value;
 
@@ -17,10 +17,18 @@ loginForm.addEventListener("submit", (e) => {
     return;
   }
 
-  // post the PID to the backend here
+  try {
+    await fetch("http://localhost:3000/user", {
+          method: "POST",
+          body: JSON.stringify({
+            pid: PID
+          })
+      });
 
-  e.preventDefault();
-  // this is a placeholder, we want to actually change this based on the PID. 
-  window.location.href = 'http://localhost:3000/weather';
-
+      window.location.href = 'http://localhost:3000/weather?pid=' + PID;
+      
+  } catch(error) {
+    console.error("Failed to post PID", error);
+    e.preventDefault();
+  }
 })
