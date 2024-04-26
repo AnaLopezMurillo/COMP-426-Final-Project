@@ -22,13 +22,13 @@ async function setupDatabase() {
   `);
 
   // Inserting sample data into the user table
-  await db.run(`INSERT INTO user (pid) VALUES (1001)`);
-  await db.run(`INSERT INTO user (pid) VALUES (1002)`);
+  //await db.run(`INSERT INTO user (pid) VALUES (1001)`);
+  //await db.run(`INSERT INTO user (pid) VALUES (1002)`);
 
   // Inserting sample data into the cities table
-  await db.run(`INSERT INTO cities (name, weather, wind_speed, temp, pid) VALUES ('Springfield', 'Sunny', 5.2, 75, 1001)`);
-  await db.run(`INSERT INTO cities (name, weather, wind_speed, temp, pid) VALUES ('Shelbyville', 'Cloudy', 3.1, 65, 1001)`);
-  await db.run(`INSERT INTO cities (name, weather, wind_speed, temp, pid) VALUES ('Capital City', 'Rainy', 7.4, 60, 1002)`);
+  //await db.run(`INSERT INTO cities (name, weather, wind_speed, temp, pid) VALUES ('Springfield', 'Sunny', 5.2, 75, 1001)`);
+  //await db.run(`INSERT INTO cities (name, weather, wind_speed, temp, pid) VALUES ('Shelbyville', 'Cloudy', 3.1, 65, 1001)`);
+  //await db.run(`INSERT INTO cities (name, weather, wind_speed, temp, pid) VALUES ('Capital City', 'Rainy', 7.4, 60, 1002)`);
 
   console.log('Database setup complete');
   await db.close();

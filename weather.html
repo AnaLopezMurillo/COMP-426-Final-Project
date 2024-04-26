@@ -8,47 +8,56 @@
     <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <div class="center">
-            <h1>Weather</h1>
-        What US city would you like to get the weather for? <input type="text" value="Chicago" id=testcity> &nbsp 
-            <button id="button" type='button'>
-                Get Weather
-            </button>
-            <br><br>
-            <table>
-                <tr>
-                    <td align=right>
-                        <b>City:</b>
-                    </td>
-                    <td>
-                        <p id="htmlcity"></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td align=right>
-                        <b>Weather:</b>
-                    </td>
-                    <td>
-                        <p id="htmlweather"></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td align=right>
-                        <b>Wind Speed:</b>
-                    </td>
-                    <td>
-                        <p id="htmlwind"></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td align=right>
-                        <b>Temperature(F):</b>
-                    </td>
-                    <td>
-                        <p id="htmltemp"></p>
-                    </td>
-                </tr>
-            </table>
+        <div class="center weather-page">
+            <h2>Please enter a U.S. City</h2>
+            <div class="card-bg weather">
+                <img src="./icons/sun.png" class="weather-sun">
+                <div class="weather-content">
+                    <div class="city-form">
+                        <form id="city-form">
+                            <input name="City" type="text" id="testcity">
+                            <button id="button" type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <div class="attributes">
+                        <div class="attribute">
+                            <p>City</p>
+                        </div>
+                        <div class="attribute">
+                            <p>Condition</p>
+                        </div>
+                        <div class="attribute">
+                            <p>Wind Speed</p>
+                        </div>
+                        <div class="attribute">
+                            <p>Temperature (F°)</p>
+                        </div>
+                    </div>
+                    <div class="results">
+                        <div class="result">
+                            <p id="htmlcity"></p>
+                        </div>
+                        <div class="result">
+                            <p id="htmlweather"></p>
+                        </div>
+                        <div class="result">
+                            <p id="htmlwind"></p>
+                        </div>
+                        <div class="result">
+                            <p id="htmltemp"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-bg weather stored-hub">
+                <div class="weather-content stored-hub">
+                    <div class="searched-div">
+                        <h3>Recently searched:</h3>
+                        <div id="searched-cities"></div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </body>
 </html>

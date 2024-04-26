@@ -21,6 +21,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/weather', (req, res) => {
+    const { pid } = req.query;
+
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
     const _retfile = path.join(__dirname, 'weather.html');
@@ -39,7 +41,7 @@ app.get('/user', async (req, res) => {
       if (cities.length > 0) {
         res.status(200).json(cities);
       } else {
-        res.status(404).send({ error: 'No cities found for this PID' });
+        res.status(200).json([]);
       }
     } else {
       // Fetch all users and their cities
