@@ -26,23 +26,23 @@ fetch('http://api.openweathermap.org/data/2.5/weather?q='
   return response.json();
 })
 .then(
-    data =>{
+    async data =>{
     getWeather(data);
     console.log(data);
 
     addrecentCities(window.location.href.slice(-34)); // helper function to add recently searched cities to div. Call it before posting the current added city so that it doesn't include that one.
 
-    fetch("http://localhost:3000/user/city", {
+    await fetch("http://localhost:3000/user/city", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
+          pid: window.location.href.slice(-34),
           name: data.name,
           weather: data.weather[0].description,
-          windspeed: data.wind.speed,
-          temp: data.main.temp,
-          pid: window.location.href.slice(-34)
+          wind_speed: data.wind.speed,
+          temp: data.main.temp
         })
       });
 
@@ -53,13 +53,17 @@ e.preventDefault();
 
 
 async function addrecentCities(p_id) {
-    const response = await fetch ("http://localhost:3000/user?pid=${p_id}");
+    const response = await fetch (`http://localhost:3000/user?pid=${p_id}`);
     const recent_cities = await response.json();
+    console.log(recent_cities);
 
-    recent_cities.cities.forEach(c => {
-      const new_div = document.createElement("h3");
-      new_div.textContent = c.name;
-      searchedCities.appendChild(new_div);
+    recent_cities.forEach(c => {
+      if (!document.getElementById(c.name)) {
+        const new_div = document.createElement("h3");
+        new_div.textContent = c.name;
+        new_div.id = c.name;
+        searchedCities.appendChild(new_div);
+      }
     });
 };
 
