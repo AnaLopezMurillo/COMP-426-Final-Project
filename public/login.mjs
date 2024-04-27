@@ -36,4 +36,5 @@ loginForm.addEventListener("submit", async (e) => {
     console.error("Failed to post PID", error);
     e.preventDefault();
   }
-})
+
+});
