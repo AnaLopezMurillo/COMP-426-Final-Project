@@ -49,7 +49,7 @@ fetch('http://api.openweathermap.org/data/2.5/weather?q='
       });
       addrecentCities(window.location.href.slice(-34)); // helper function to add recently searched cities to div. Call it before posting the current added city so that it doesn't include that one.
     })
-
+    document.getElementById('testcity').value = '';
 e.preventDefault();
 });
 
