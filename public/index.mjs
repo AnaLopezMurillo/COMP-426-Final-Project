@@ -15,6 +15,10 @@ let cityForm = document.getElementById("city-form")
 // this is the div we should manipulate to add the recently searched cities from the database!!! just add in the innerHTML a new <h3> element with each city from the backend, and they should show up on the webpage
 let searchedCities = document.getElementById("searched-cities")
 
+document.addEventListener("DOMContentLoaded", async (e) => {
+      await addrecentCities(window.location.href.slice(-34));
+})
+
 cityForm.addEventListener("submit", (e) => {
 console.log(document.getElementById('testcity').value)
 
@@ -51,6 +55,7 @@ e.preventDefault();
 
 
 async function addrecentCities(p_id) {
+    searchedCities.innerHTML = "";
     const recent_array = [];
     const response = await fetch (`http://localhost:3000/user?pid=${p_id}`);
     const recent_cities = await response.json();
@@ -60,8 +65,6 @@ async function addrecentCities(p_id) {
           recent_array.unshift(c.name);
         }
     });
-
-    searchedCities.innerHTML = "";
 
     for (let i = 0; i < 7; i++) {
         const new_div = document.createElement("h3");
