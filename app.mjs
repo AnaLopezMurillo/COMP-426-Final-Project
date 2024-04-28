@@ -74,7 +74,7 @@ app.post('/user', async (req, res) => {
     };
 
     await db.run(`INSERT INTO user (pid) VALUES (?)`, pid);
-    res.status(201).send({ message: 'User created successfully' });
+    return res.status(201).send({ message: 'User created successfully' });
   } catch (error) {
     console.error('Failed to create user:', error);
     res.status(500).send({ error: 'Failed to create user' });
