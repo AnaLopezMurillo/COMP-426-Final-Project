@@ -12,7 +12,6 @@ function getWeather(data) {
 
 let cityForm = document.getElementById("city-form")
 
-// this is the div we should manipulate to add the recently searched cities from the database!!! just add in the innerHTML a new <h3> element with each city from the backend, and they should show up on the webpage
 let searchedCities = document.getElementById("searched-cities")
 
 document.addEventListener("DOMContentLoaded", async (e) => {
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", async (e) => {
 })
 
 cityForm.addEventListener("submit", (e) => {
-console.log(document.getElementById('testcity').value)
 
 fetch('http://api.openweathermap.org/data/2.5/weather?q='
 + document.getElementById('testcity').value +
@@ -75,22 +73,3 @@ async function addrecentCities(p_id) {
     console.log(recent_array);
 };
 
-/*
-document.addEventListener("click", function (event) {
-  if (!event.target.matches("#button")) return;
-
-  fetch('http://api.openweathermap.org/data/2.5/weather?q='
-  + document.getElementById('testcity').value +
-  ',us&APPID=f87efa6efbae21838d158e6b02208445&units=imperial')
-  .then(
-      response =>{
-    return response.json();
-  })
-  .then(
-      data =>{
-      getWeather(data);
-      console.log(data);
-    });
-  }
-);
-*/
